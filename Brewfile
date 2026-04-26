@@ -12,15 +12,11 @@ brew "zsh-autosuggestions"
 brew "zsh-completions"
 # Fish shell like syntax highlighting for zsh
 brew "zsh-syntax-highlighting"
-# OpenAI's official ChatGPT desktop app
-cask "chatgpt"
 cask "font-jetbrains-mono-nerd-font"
 # Terminal emulator that uses platform-native UI and GPU acceleration
 cask "ghostty"
 # Java IDE by JetBrains
 cask "intellij-idea"
-# VPN client for secure internet access and private browsing
-cask "nordvpn"
 # Control your tools with a few keystrokes
 cask "raycast"
 # Music streaming service
