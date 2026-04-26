@@ -113,7 +113,8 @@ install_fzf_shell_integration() {
 link_dotfiles() {
   log "Linking dotfiles"
 
-  link_file "$DOTFILES_DIR/zsh/.zshrc" "$HOME/.zshrc"
+  link_file "$DOTFILES_DIR/.zshrc" "$HOME/.zshrc"
+  link_file "$DOTFILES_DIR/.gitconfig" "$HOME/.gitconfig"
   link_file "$DOTFILES_DIR/starship/starship.toml" "$HOME/.config/starship.toml"
   link_file "$DOTFILES_DIR/ghostty/config" "$HOME/Library/Application Support/com.mitchellh.ghostty/config"
 }
@@ -139,8 +140,8 @@ offer_raycast_import() {
 main() {
   # Bootstrap the Mac first, then install packages, then link user config.
   ensure_xcode_cli_tools
-  ensure_homebrew_in_path
   ensure_homebrew
+  ensure_homebrew_in_path
   install_brew_bundle
   install_fzf_shell_integration
   link_dotfiles

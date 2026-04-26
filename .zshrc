@@ -43,14 +43,13 @@ export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
 # ------------------------------------------------------------------------------
 # Aliases
 # ------------------------------------------------------------------------------
-
-alias gc='git commit -m'
-
 alias ls='eza'
 alias l='eza -lbF --git'
 alias ll='eza -lbGF --git'
 alias la='eza -labGF --git'
-alias openz='open -a Zed '
+alias oz='open -a Zed '
+alias ..='cd ..'
+alias ...='cd ../..'
 
 # ------------------------------------------------------------------------------
 # Prompt
