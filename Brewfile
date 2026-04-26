@@ -27,3 +27,5 @@ cask "visual-studio-code"
 cask "whatsapp"
 # Multiplayer code editor
 cask "zed"
+# Arc Browser
+cask "arc"
