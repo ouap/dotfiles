@@ -6,6 +6,7 @@
 [core]
   editor = vim
   autocrlf = input
+	excludesfile = ~/.config/git/ignore
 
 [init]
   defaultBranch = main
