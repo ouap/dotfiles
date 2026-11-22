@@ -100,23 +100,15 @@ install_brew_bundle() {
   brew bundle --file "$DOTFILES_DIR/Brewfile"
 }
 
-install_fzf_shell_integration() {
-  local fzf_install
-
-  fzf_install="$(brew --prefix)/opt/fzf/install"
-  if [[ -x "$fzf_install" ]]; then
-    log "Installing fzf shell integration"
-    "$fzf_install" --key-bindings --completion --no-update-rc
-  fi
-}
-
 link_dotfiles() {
   log "Linking dotfiles"
 
   link_file "$DOTFILES_DIR/.zshrc" "$HOME/.zshrc"
   link_file "$DOTFILES_DIR/.gitconfig" "$HOME/.gitconfig"
+  link_file "$DOTFILES_DIR/git/ignore" "$HOME/.config/git/ignore"
   link_file "$DOTFILES_DIR/starship/starship.toml" "$HOME/.config/starship.toml"
   link_file "$DOTFILES_DIR/ghostty/config" "$HOME/Library/Application Support/com.mitchellh.ghostty/config"
+  link_file "$DOTFILES_DIR/zed/settings.json" "$HOME/.config/zed/settings.json"
 }
 
 offer_raycast_import() {
@@ -139,11 +131,16 @@ offer_raycast_import() {
 
 main() {
   # Bootstrap the Mac first, then install packages, then link user config.
+  # DOTFILES_SKIP_BREW=1 skips Homebrew only (install, shellenv, brew bundle).
+  # Unset, the full install path is unchanged. Xcode CLI tools are still checked.
   ensure_xcode_cli_tools
-  ensure_homebrew
-  ensure_homebrew_in_path
-  install_brew_bundle
-  install_fzf_shell_integration
+  if [[ "${DOTFILES_SKIP_BREW:-}" == "1" ]]; then
+    log "Skipping Homebrew steps (DOTFILES_SKIP_BREW=1)"
+  else
+    ensure_homebrew
+    ensure_homebrew_in_path
+    install_brew_bundle
+  fi
   link_dotfiles
   offer_raycast_import
 

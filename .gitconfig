@@ -1,12 +1,12 @@
 [user]
-	name = Ouams
-	email = 2905652+ouap@users.noreply.github.com
-	useConfigOnly = true
+  name = Ouams
+  email = 2905652+ouap@users.noreply.github.com
+  useConfigOnly = true
 
 [core]
   editor = vim
   autocrlf = input
-	excludesfile = ~/.config/git/ignore
+  excludesfile = ~/.config/git/ignore
 
 [init]
   defaultBranch = main

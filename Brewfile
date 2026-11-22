@@ -4,6 +4,12 @@ brew "eza"
 brew "fd"
 # Command-line fuzzy finder written in Go
 brew "fzf"
+# Replace zsh's completion menu with fzf
+brew "fzf-tab"
+# Cat clone with syntax highlighting, used by the fzf Ctrl+T preview
+brew "bat"
+# Smarter directory jumper (`z`), previewed by fzf-tab
+brew "zoxide"
 # Cross-shell prompt for astronauts
 brew "starship"
 # Fish-like fast/unobtrusive autosuggestions for zsh

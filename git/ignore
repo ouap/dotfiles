@@ -1,0 +1,31 @@
+# Global gitignore, linked to ~/.config/git/ignore
+
+# macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+._*
+.DocumentRevisions-V100
+.fseventsd
+.Spotlight-V100
+.TemporaryItems
+.Trashes
+.VolumeIcon.icns
+.com.apple.timemachine.donotpresent
+.AppleDB
+.AppleDesktop
+Network Trash Folder
+Temporary Items
+.apdisk
+
+# Editors
+*~
+*.swp
+*.swo
+.idea/
+*.iml
+.vscode/
+
+# Other systems that show up on shared disks
+Thumbs.db
+Desktop.ini
