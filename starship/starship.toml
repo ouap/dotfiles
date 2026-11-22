@@ -1,7 +1,10 @@
 "$schema" = 'https://starship.rs/config-schema.json'
 
+# python and cmd_duration contribute nothing unless a virtualenv is active
+# or the previous command was slow (starship default: >= 2s), so the prompt
+# stays the same in the common case.
 format = """
-$username$hostname $directory $git_branch$git_state$git_status $character
+$username$hostname $directory$python $git_branch$git_state$git_status$cmd_duration $character
 """
 
 add_newline = false
@@ -43,11 +46,11 @@ format = '\([$state( $progress_current/$progress_total)]($style)\) '
 style = "bright-black"
 
 [cmd_duration]
-format = "[$duration]($style) "
+format = "[$duration]($style)"
 style = "yellow"
 
 [python]
-format = "[$virtualenv]($style) "
+format = "[$virtualenv]($style)"
 style = "bright-black"
 detect_extensions = []
 detect_files = []
